@@ -7,7 +7,7 @@ import data from "./data/dataModel";
 function App() {
 
   return (
-    <ThemeProvider theme={data.themes.themeDefault}>
+    <ThemeProvider theme={data.themes.BlackAndWhite}>
         <GlobalStyles />
         <Entrance />
     </ThemeProvider>
