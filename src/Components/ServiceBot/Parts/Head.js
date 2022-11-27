@@ -4,7 +4,7 @@ import Eye from "./HeadParts/Eye";
 import { transformRotateCenter } from "../../../utils/svgUtils";
 
 const StyledHead = styled.g`
-    rect {
+    #ServiceBot__Head--Container {
         fill: ${({theme}) => theme.colors.dark};
         stroke: ${({theme}) => theme.colors.bright};
     }

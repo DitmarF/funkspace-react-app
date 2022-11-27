@@ -8,7 +8,7 @@ const StyledEye = styled.g`
     }
 
     .sclera {
-        fill: ${({theme}) => theme.colors.bright};
+        fill: ${({theme}) => theme.colors.semiWhite};
     }
 
     .iris {
