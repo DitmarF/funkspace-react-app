@@ -21,10 +21,10 @@ const StyledServiceBot = styled.div`
 
 `;
 
-function ServiceBot(){
+function ServiceBot(props){
 
     return(
-        <StyledServiceBot>
+        <StyledServiceBot onClick={props.onClick}>
 
             <svg id='ServiceBot' viewBox='0 0 70 130'>
 

@@ -1,5 +1,5 @@
 import { ThemeProvider } from "styled-components";
-import Entrance from "./Components/Pages/Entrance";
+import Entrance from "./Features/Entrance/Entrance";
 import GlobalStyles from "./Components/Styles/Global";
 import data from "./data/dataModel";
 

@@ -26,7 +26,7 @@ const StyledEye = styled.g`
 function Eye(){
 
     return(
-        <StyledEye id='ServiceBot__Eye'>
+        <StyledEye id='ServiceBot__Eye' >
 
             <mask id="ServiceBot__Eyelid">
    
@@ -49,7 +49,7 @@ function Eye(){
                     cx="35" cy="30" r="2.5" strokeWidth='.25'
                 />
 
-            <circle id="ServiceBot__Eyelid--Skin" className="skin"
+            <circle id="ServiceBot__Eyelid--Skin" className="skin" 
                 cx="35" cy="30" r="15" strokeWidth='1'
                 mask="url(#ServiceBot__Eyelid)"
             />
