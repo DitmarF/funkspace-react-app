@@ -7,14 +7,12 @@ import { toggleOn } from "./entranceSlice"
 
 function Entrance() {
 
-    const isOn = useSelector(state => state.entrance.isOn);
     const dispatch = useDispatch(); 
-    console.log(isOn)
-
+ 
     return(
         
         <StyledEntrance>
-            <Header h={1}>{`Funkspace ${isOn}`}</Header>
+            <Header h="1">Funk Space</Header>
             <ServiceBot onClick={() => dispatch( toggleOn() )}/>
         </StyledEntrance>
         

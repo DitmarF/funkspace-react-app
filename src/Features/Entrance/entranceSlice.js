@@ -4,7 +4,6 @@ export const entranceSlice = createSlice({
     name: 'entrance',
     initialState: {
         isOn: false,
-        test: 'TesT'
     },
     reducers: {
         toggleOn: state => {

@@ -39,6 +39,11 @@ const GlobalStyles = createGlobalStyle`
     h6 {
         font-size: 0.75rem;
     }
+
+    .appInfo {
+        position: fixed;
+        top: 0;
+    }
 `;
 
 export default GlobalStyles;
