@@ -1,27 +1,22 @@
 import { ThemeProvider } from "styled-components";
 import Entrance from "../Features/Entrance/Entrance";
 import GlobalStyles from "../Components/Styles/Global";
-import data from "../data/dataModel";
 import { useSelector } from "react-redux";
 import Header from "../Components/Module/Header";
 
 
-function App() {
+function App(props) {
 
     const themeId = useSelector(state => state.app.themeId);
-    const isEntranceOn = useSelector(state => state.entrance.isOn)
-    console.log(themeId);
-    console.log(data);
+    const isEntranceActive = useSelector(state => state.entrance.isActive);
 
     let activeTheme;
 
-    Object.values(data.themes).forEach(theme => {
+    Object.values(props.data.themes).forEach(theme => {
 
         if(theme.id = themeId) activeTheme = theme;
 
     })
-
-    console.log(activeTheme);
 
     return (
         <ThemeProvider theme={activeTheme}>
@@ -31,7 +26,7 @@ function App() {
                 {<br />}
                 {`ThemeID - ${activeTheme.id}`}
                 {<br />}
-                {`Is Entrance on? - ${isEntranceOn}`}
+                {`Is Entrance active? - ${isEntranceActive}`}
             </Header>
             <Entrance />
          </ThemeProvider>

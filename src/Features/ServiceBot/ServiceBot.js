@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import Body from "./Parts/Body";
 import Head from "./Parts/Head";
@@ -29,6 +30,7 @@ function ServiceBot(props){
             <svg id='ServiceBot' viewBox='0 0 70 130'>
 
                 <Head />
+
                 <Body />
 
             </svg>

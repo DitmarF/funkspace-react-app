@@ -1,7 +1,9 @@
 import styled from "styled-components"
 import Mouth from "./HeadParts/Mouth";
 import Eye from "./HeadParts/Eye";
-import { transformRotateCenter } from "../../../utils/svgUtils";
+import { useSelector } from "react-redux";
+import { useRef } from "react";
+import { rotate } from "../../../utils/gsapUtils";
 
 const StyledHead = styled.g`
     #ServiceBot__Head--Container {
@@ -10,21 +12,26 @@ const StyledHead = styled.g`
     }
 `;
 
+
 function Head(){
 
-    return(
-       <StyledHead id='ServiceBot__Head'>
+    const isActive = useSelector(state => state.entrance.isActive);
+    const headContainer = useRef();
     
-            <rect id='ServiceBot__Head--Container'
+    isActive 
+    ? rotate(headContainer, '45', '25, 25') 
+    : rotate(headContainer, '0', '25, 25');
+        
+    return(
+
+        <StyledHead id='ServiceBot__Head'> 
+            <rect id='ServiceBot__Head--Container' ref={headContainer}
                 x='10' y='10' width='50' height='50' strokeWidth='1' rx='2' ry='2' 
-                transform={transformRotateCenter('45', '10', '10', '50', '50')} 
             />
 
             <Eye />
-
             <Mouth />
-
-       </StyledHead>
+        </StyledHead>
     )
 
 }
