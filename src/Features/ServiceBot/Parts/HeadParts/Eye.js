@@ -26,7 +26,7 @@ const StyledEye = styled.g`
 
 function Eye(){
 
-    const isActive = useSelector(state => state.entrance.isActive);
+    // const isActive = useSelector(state => state.entrance.isActive);
 
     const eyelidState = {
         top: {
@@ -50,18 +50,18 @@ function Eye(){
 
                 <path id="ServiceBot__EyelidGap--top" 
                     d={`
-                        M20,30.05c2.5,0,${eyelidState.top.ark}
+                        M20,30.05c2,0,${eyelidState.top.ark}
                         -${eyelidState.top.left}
                         ,15-${eyelidState.top.right}
-                        s12.5,8,15,${eyelidState.top.right}H20z
+                        s13,8,15,${eyelidState.top.right}H20z
                     `} 
                 />
                 <path id="ServiceBot__EyelidGap--bottom" 
                     d={`
-                        M50,30c-2.5,0-${eyelidState.bottom.ark}
+                        M50,30c-2,0-${eyelidState.bottom.ark}
                         ,${eyelidState.bottom.right}
                         -15,${eyelidState.bottom.left}
-                        S22.5,30,20,30
+                        S22,30,20,30
                     `}
                 /> 
 

@@ -9,6 +9,7 @@ function App(props) {
 
     const themeId = useSelector(state => state.app.themeId);
     const isEntranceActive = useSelector(state => state.entrance.isActive);
+    const ServiceBotExpression = useSelector(state => state.serviceBot.expression);
 
     let activeTheme;
 
@@ -27,6 +28,8 @@ function App(props) {
                 {`ThemeID - ${activeTheme.id}`}
                 {<br />}
                 {`Is Entrance active? - ${isEntranceActive}`}
+                {<br />}
+                {`ServiceBot expression - ${ServiceBotExpression}`}
             </Header>
             <Entrance />
          </ThemeProvider>

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components"
 import { rotate } from "../../../utils/gsapUtils";
@@ -15,10 +15,12 @@ function Body(){
     const isActive = useSelector(state => state.entrance.isActive);
     const bodyContainer = useRef();
 
-    isActive 
-    ? rotate(bodyContainer, '0', '25 25', '.75') 
-    : rotate(bodyContainer, '45', '25 25');
-   
+    useLayoutEffect(() => {
+        isActive 
+        ? rotate(bodyContainer, '0', '25 25', '.75') 
+        : rotate(bodyContainer, '45', '25 25');
+    });
+
     return(
        <StyledBody id='ServiceBot__Body'>
     

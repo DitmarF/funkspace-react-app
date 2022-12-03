@@ -1,6 +1,10 @@
+import { useLayoutEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { toggleOn } from "../Entrance/entranceSlice";
 import Body from "./Parts/Body";
 import Head from "./Parts/Head";
+import { setExpression } from "./serviceBotSlice";
 
 const StyledServiceBot = styled.div`
 
@@ -23,10 +27,20 @@ const StyledServiceBot = styled.div`
 
 function ServiceBot(props){
 
+    const dispatch = useDispatch(); 
+
+    const isActive = useSelector(state => state.entrance.isActive);
+    const expression = useSelector(state => state.serviceBot.expression);
+
+    useLayoutEffect(() => {
+        if(isActive && expression === 'off') { dispatch(setExpression('default')) };
+        if(!isActive && expression !== 'off') { dispatch(setExpression('off')) };
+    })
+
     return(
         <StyledServiceBot onClick={props.onClick}>
 
-            <svg id='ServiceBot' viewBox='0 0 70 130'>
+            <svg id='ServiceBot' viewBox='0 0 70 130' onClick={() => dispatch( toggleOn() )}>
 
                 <Head />
 
