@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 import styled from "styled-components";
 import Body from "./Parts/Body";
 import Head from "./Parts/Head";

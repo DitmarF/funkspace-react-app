@@ -1,5 +1,4 @@
-import gsap from "gsap";
-import { useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components"
 import { rotate } from "../../../utils/gsapUtils";
@@ -17,7 +16,7 @@ function Body(){
     const bodyContainer = useRef();
 
     isActive 
-    ? rotate(bodyContainer, '0', '25 25') 
+    ? rotate(bodyContainer, '0', '25 25', '.75') 
     : rotate(bodyContainer, '45', '25 25');
    
     return(

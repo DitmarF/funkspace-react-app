@@ -19,7 +19,7 @@ function Head(){
     const headContainer = useRef();
     
     isActive 
-    ? rotate(headContainer, '45', '25, 25') 
+    ? rotate(headContainer, '45', '25, 25', '.75') 
     : rotate(headContainer, '0', '25, 25');
         
     return(

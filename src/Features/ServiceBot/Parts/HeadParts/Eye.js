@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 const StyledEye = styled.g`
@@ -25,6 +26,21 @@ const StyledEye = styled.g`
 
 function Eye(){
 
+    const isActive = useSelector(state => state.entrance.isActive);
+
+    const eyelidState = {
+        top: {
+            left: '9',
+            right: '9',
+            ark: '5'
+        },
+        bottom: {
+            left: '9',
+            right: '9',
+            ark: '5'
+        }
+    }
+
     return(
         <StyledEye id='ServiceBot__Eye' >
 
@@ -32,8 +48,22 @@ function Eye(){
    
                 <circle cx="35" cy="30" r="15" fill="white" />
 
-                <path id="ServiceBot__EyelidGap--top" d="M20,30c0,0,1-8,15-8s15,8,15,8H20z"/>
-                <path id="ServiceBot__EyelidGap--bottom" d="M50,30c0,0-1,8-15,8S20,30,20,30"/> 
+                <path id="ServiceBot__EyelidGap--top" 
+                    d={`
+                        M20,30.05c2.5,0,${eyelidState.top.ark}
+                        -${eyelidState.top.left}
+                        ,15-${eyelidState.top.right}
+                        s12.5,8,15,${eyelidState.top.right}H20z
+                    `} 
+                />
+                <path id="ServiceBot__EyelidGap--bottom" 
+                    d={`
+                        M50,30c-2.5,0-${eyelidState.bottom.ark}
+                        ,${eyelidState.bottom.right}
+                        -15,${eyelidState.bottom.left}
+                        S22.5,30,20,30
+                    `}
+                /> 
 
             </mask>
 
