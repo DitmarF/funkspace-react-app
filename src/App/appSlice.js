@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const appSlice = createSlice({
     name: 'app',
     initialState: {
-        themeId: '1'
+        themeId: '0'
     },
     reducers: {
         switchTheme: (state, id) => {

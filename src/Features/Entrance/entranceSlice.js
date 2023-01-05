@@ -10,7 +10,7 @@ export const entranceSlice = createSlice({
             state.isActive = !state.isActive
         }
     }
-})
+});
 
 export const { toggleOn } = entranceSlice.actions;
 export default entranceSlice.reducer;

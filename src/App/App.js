@@ -3,7 +3,7 @@ import Entrance from "../Features/Entrance/Entrance";
 import GlobalStyles from "../Components/Styles/Global";
 import { useSelector } from "react-redux";
 import Header from "../Components/Module/Header";
-
+import ThemeSwitcher from "../Features/ThemeSwitcher/ThemeSwitcher";
 
 function App(props) {
 
@@ -11,13 +11,11 @@ function App(props) {
     const isEntranceActive = useSelector(state => state.entrance.isActive);
     const ServiceBotExpression = useSelector(state => state.serviceBot.expression);
 
-    let activeTheme;
+    let activeTheme = Object.values(props.data.themes)[0];
 
-    Object.values(props.data.themes).forEach(theme => {
-
-        if(theme.id = themeId) activeTheme = theme;
-
-    })
+    if(themeId.payload) {
+        activeTheme = Object.values(props.data.themes)[themeId.payload];
+    }
 
     return (
         <ThemeProvider theme={activeTheme}>
@@ -31,6 +29,7 @@ function App(props) {
                 {<br />}
                 {`ServiceBot expression - ${ServiceBotExpression}`}
             </Header>
+            <ThemeSwitcher data={{theme:activeTheme}}/>
             <Entrance />
          </ThemeProvider>
     );

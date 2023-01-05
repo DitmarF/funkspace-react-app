@@ -1,12 +1,7 @@
-import { useSelector } from "react-redux";
 import styled from "styled-components";
+import Eyelid from "./EyeParts/Eyelid";
 
 const StyledEye = styled.g`
-
-    .skin {
-        fill: ${({theme}) => theme.colors.dark};
-        stroke: ${({theme}) => theme.colors.semiBright};
-    }
 
     .sclera {
         fill: ${({theme}) => theme.colors.semiWhite};
@@ -26,46 +21,10 @@ const StyledEye = styled.g`
 
 function Eye(){
 
-    // const isActive = useSelector(state => state.entrance.isActive);
-
-    const eyelidState = {
-        top: {
-            left: '9',
-            right: '9',
-            ark: '5'
-        },
-        bottom: {
-            left: '9',
-            right: '9',
-            ark: '5'
-        }
-    }
-
     return(
-        <StyledEye id='ServiceBot__Eye' >
+        <StyledEye>
 
-            <mask id="ServiceBot__Eyelid">
-   
-                <circle cx="35" cy="30" r="15" fill="white" />
-
-                <path id="ServiceBot__EyelidGap--top" 
-                    d={`
-                        M20,30.05c2,0,${eyelidState.top.ark}
-                        -${eyelidState.top.left}
-                        ,15-${eyelidState.top.right}
-                        s13,8,15,${eyelidState.top.right}H20z
-                    `} 
-                />
-                <path id="ServiceBot__EyelidGap--bottom" 
-                    d={`
-                        M50,30c-2,0-${eyelidState.bottom.ark}
-                        ,${eyelidState.bottom.right}
-                        -15,${eyelidState.bottom.left}
-                        S22,30,20,30
-                    `}
-                /> 
-
-            </mask>
+           <Eyelid>
 
                 <circle id="ServiceBot__Eye--Sclera" className="sclera"
                     cx="35" cy="30" r="15" 
@@ -79,22 +38,7 @@ function Eye(){
                     cx="35" cy="30" r="2.5" strokeWidth='.25'
                 />
 
-            <circle id="ServiceBot__Eyelid--Skin" className="skin" 
-                cx="35" cy="30" r="15" strokeWidth='1'
-                mask="url(#ServiceBot__Eyelid)"
-            />
-
-            {/* 
-                <path id="Top1" d="M20,30c0,0,1-15,15-15s15,15,15,15H20z"/>
-                <path id="Top2" d="M20,30c0,0,1-14,15-14s15,14,15,14H20z"/>	
-                <path id="Top3" d="M20,30c0,0,1-13,15-13s15,13,15,13H20z"/>
-
-                <path id="Bottom1" d="M50,30c0,0-1,15-15,15S20,30,20,30"/>
-                <path id="Bottom2" d="M50,30c0,0-1,14-15,14S20,30,20,30"/>
-                <path id="Bottom3" d="M50,30c0,0-1,13-15,13S20,30,20,30"/> 
-            */}
-
-
+           </Eyelid>
 
         </StyledEye>
     )

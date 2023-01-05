@@ -14,8 +14,8 @@ root.render(
 
         <Provider store={store}>
             <App data={data}/>
-            {console.log('Data: ', data)}
-            {console.log('Store: ', store.getState())}
+            {/* {console.log('Data: ', data)}
+            {console.log('Store: ', store.getState())} */}
         </Provider>
 
     </React.StrictMode>

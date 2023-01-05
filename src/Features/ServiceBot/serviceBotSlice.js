@@ -10,7 +10,7 @@ export const serviceBotSlide = createSlice({
             state.expression = newExpression.payload;
         }
     }
-})
+});
 
 export const { setExpression } = serviceBotSlide.actions;
 export default serviceBotSlide.reducer;
